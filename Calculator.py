@@ -45,6 +45,11 @@ def calc():
   answer = total
   hello["text"] = answer
 
+def reset():
+  global answer, lastNumber, operator
+  lastNumber = answer
+  answer = 0
+  hello["text"] = answer
 
 hello = tk.Label(text=answer)
 hello.grid(row=0, column=1)
@@ -93,5 +98,8 @@ divide.grid(row=2, column=4)
 
 equals = tk.Button(text="=", command=calc)
 equals.grid(row=4, column=3)
+
+clear = tk.Button(text="C", command=reset)
+clear.grid(row=4, column=4)
 
 tk.mainloop()
